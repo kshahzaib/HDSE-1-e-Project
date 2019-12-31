@@ -1,0 +1,93 @@
+﻿@model IEnumerable<Clinic_Management_System.Product>
+
+@{
+    ViewBag.Title = "Products_List";
+    Layout = "~/Views/Shared/_Front.cshtml";
+}
+
+<h2>Products_List</h2>
+
+<div class="page">
+    <!--header start-->
+    <!--header end-->
+    <!-- page-title -->
+    <div class="ttm-page-title-row">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="title-box ttm-textcolor-white">
+                        <div class="page-title-heading">
+                            <h1 class="title">Our Team</h1>
+                        </div><!-- /.page-title-captions -->
+                        <div class="breadcrumb-wrapper">
+                            <div class="container">
+                                <div class="breadcrumb-wrapper-inner">
+                                    <span>
+                                        <a title="Go to Delmont." href="index.html" class="home"><i class="themifyicon ti-home"></i>&nbsp;&nbsp;Home</a>
+                                    </span>
+                                    <span class="ttm-bread-sep">&nbsp; | &nbsp;</span>
+                                    <span>Our Team</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- /.col-md-12 -->
+            </div><!-- /.row -->
+        </div><!-- /.container -->
+    </div><!-- page-title end-->
+    <!--site-main start-->
+    <div class="site-main">
+        <section class="ttm-row pb-70 res-991-pb-20 clearfix">
+            <div class="container">
+                <!-- row -->
+                <div class="row">
+                    <div class="col-lg-10 col-md-10">
+                        <!-- section-title -->
+                        <div class="section-title with-desc clearfix">
+                            <div class="title-header">
+                                <h5>MEET OUR EXPERIENCED TEAM</h5>
+                                <h2 class="title">Our Dedicated Doctors Team</h2>
+                            </div>
+                            <div class="title-desc">We offer extensive medical procedures to outbound and inbound patients what it is and we are very proud of achievement of our staff, We are all work together to help our all patients for recovery</div>
+                        </div><!-- section-title end -->
+                    </div>
+                    <div class="col-lg-2 col-md-2"></div>
+                </div><!-- row end -->
+                <!-- row -->
+
+                <div class="row multi-columns-row ttm-boxes-row-wrapper">
+               @foreach (var item in Model)
+               {
+                <div class="ttm-box-col-wrapper col-lg-3 col-md-4 col-xs-12">
+                    <!-- featured-imagebox-team -->
+                    <div class="featured-imagebox featured-imagebox-team ttm-team-box-view-overlay">
+                        <div class="featured-thumbnail">
+                            <img class="img-fluid" src="@Url.Content(item.Picture)" alt="image">
+                        </div>
+                        <div class="ttm-box-view-overlay">
+                            <div class="featured-iconbox ttm-media-link">
+                                <a href="team-details.html"><i class="ti ti-plus"></i></a>
+                            </div>
+                        </div>
+                        <div class="featured-content featured-content-team">
+                            <div class="featured-title">
+                                <h5><a href="team-details.html">@Url.Content(item.Name)</a></h5>
+                            </div>
+                            <div class="ttm-team-position">@Url.Content(item.Description)</div>
+                          
+                        </div>
+                    </div><!-- featured-imagebox-team end-->
+                </div>
+               }
+                   
+               
+                </div><!-- row end -->
+            </div>
+        </section>
+    </div><!--site-main end-->
+    <!--footer start-->
+    <!--footer end-->
+    <!--back-to-top start-->
+    
+    <!--back-to-top end-->
+</div><!-- page end -->
